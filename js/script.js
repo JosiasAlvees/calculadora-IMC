@@ -1,5 +1,5 @@
 const calcular = document.getElementById('calcular');
-
+const resetar = document.getElementById('resetar');
 
 
 function imc(){
@@ -30,9 +30,6 @@ function imc(){
         classificacao = 'com obesidade de grau III. CUIDADO'
     }
 
-
-
-
         resultado.textContent = (`${nome} seu imc é ${imc} e você está ${classificacao}`);
 
     }else{
@@ -40,4 +37,12 @@ function imc(){
     }
 }
 
+function resetarCampos(){
+    document.getElementById('nome').value = '';
+     document.getElementById('altura').value = '';
+     document.getElementById('peso').value = '';
+     document.getElementById('resultado').textContent = '';	
+    }
+
 calcular.addEventListener('click', imc);
+resetar.addEventListener('click', resetarCampos);
